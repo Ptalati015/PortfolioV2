@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preet Talati - Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.ico">
+
+    <style>
+      
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">PT</div>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> Toggle Theme
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content container">
+            <div class="avatar">PT</div>
+            <h1>Preet Talati</h1>
+            <p>Software Developer | Full Stack Engineer | Security+ Certified</p>
+            <div class="skills">
+                <span class="skill-chip">💻 Full Stack</span>
+                <span class="skill-chip">🔒 Security+</span>
+                <span class="skill-chip">👨‍💼 CTO</span>
+                <span class="skill-chip">⚡ .NET</span>
+                <span class="skill-chip">⚛️ React</span>
+            </div>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2><span class="section-icon">🏆</span> About Me</h2>
+            <div class="card">
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    Results-driven Software Developer experienced in full-stack development using C#, .NET, React, and more. 
+                    Proven success building scalable RESTful APIs, secure web apps, and microservices. CompTIA Security+ 
+                    certified with expertise in Agile, CI/CD, and database optimization.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2><span class="section-icon">💼</span> Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Chief Technology Officer</div>
+                <div class="experience-company">Gyfr</div>
+                <div class="experience-period">Feb 2025 – Present</div>
+                <ul class="experience-achievements">
+                    <li>Led technical vision for fitness platform, increasing retention by 40%</li>
+                    <li>Managed product lifecycle and hands-on development</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Software Developer</div>
+                <div class="experience-company">Defense Language Institute</div>
+                <div class="experience-period">Aug 2024 – Present</div>
+                <ul class="experience-achievements">
+                    <li>Built .NET MVC apps and REST APIs for military learning tools</li>
+                    <li>Optimized databases and deployment pipelines on IIS</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Lead Software Developer</div>
+                <div class="experience-company">Gyfr</div>
+                <div class="experience-period">Jun 2024 – Feb 2025</div>
+                <ul class="experience-achievements">
+                    <li>Architected a full-stack app in React + Firebase for 10K+ users</li>
+                    <li>Improved deployment efficiency by 40% via CI/CD and Agile</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2><span class="section-icon">🚀</span> Projects</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Networked 3 Card Poker</h3>
+                    <p>Java multiplayer game with MVC architecture, socket communication, and robust unit testing.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">MVC</span>
+                        <span class="tech-tag">Socket Programming</span>
+                        <span class="tech-tag">Unit Testing</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Gyfr App</h3>
+                    <p>Full-stack fitness platform using React, Firebase, and video integration.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Video Integration</span>
+                        <span class="tech-tag">Full Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2><span class="section-icon">📧</span> Contact</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:talatipreet@gmail.com">talatipreet@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <a href="tel:847-877-1107">847-877-1107</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/preet-talati/" target="_blank">preet-talati</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Theme toggle functionality
+        let isDarkMode = true;
+        
+        function toggleTheme() {
+            isDarkMode = !isDarkMode;
+            const root = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (isDarkMode) {
+                root.style.setProperty('--bg-dark', '#0A0A0A');
+                root.style.setProperty('--bg-light', '#1A1A1A');
+                root.style.setProperty('--text-light', '#FFFFFF');
+                root.style.setProperty('--text-gray', '#B0B0B0');
+                themeIcon.textContent = '🌙';
+            } else {
+                root.style.setProperty('--bg-dark', '#FAFAFA');
+                root.style.setProperty('--bg-light', '#FFFFFF');
+                root.style.setProperty('--text-light', '#333333');
+                root.style.setProperty('--text-gray', '#666666');
+                themeIcon.textContent = '☀️';
+            }
+        }
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 100) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('.section, .card, .experience-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add typing effect to hero text
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', function() {
+            const heroTitle = document.querySelector('.hero h1');
+            const originalText = heroTitle.textContent;
+            setTimeout(() => {
+                typeWriter(heroTitle, originalText, 100);
+            }, 1000);
+        });
+
+        // Add parallax effect to hero background
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroBackground = document.querySelector('.hero-bg');
+            if (heroBackground) {
+                heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add mouse follow effect to cursor
+        document.addEventListener('mousemove', function(e) {
+            const cursor = document.querySelector('.cursor');
+            if (!cursor) {
+                const newCursor = document.createElement('div');
+                newCursor.className = 'cursor';
+                newCursor.style.cssText = `
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    background: radial-gradient(circle, rgba(242, 124, 34, 0.3) 0%, transparent 70%);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    transition: transform 0.1s ease;
+                `;
+                document.body.appendChild(newCursor);
+            }
+            
+            const cursor2 = document.querySelector('.cursor');
+            if (cursor2) {
+                cursor2.style.left = e.clientX - 10 + 'px';
+                cursor2.style.top = e.clientY - 10 + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
