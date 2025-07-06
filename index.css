@@ -144,6 +144,10 @@ body {
     /* max-width: 50%; */
     transform: translateX(-7rem); 
   }
+  .hero-image-container {
+    position: relative;         
+    top: -30px;                 
+  }
 }
 
 .hero-content {
@@ -240,7 +244,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  max-width: 400px;
+  max-width: 500px;
   margin-top: 2rem;
 }
 
@@ -500,6 +504,8 @@ body {
     align-items: center;
     padding: 2rem 1rem;
     text-align: center;
+    position: relative;
+    top:80px
   }
   .hero h1 {
     font-size: 2.2rem;
