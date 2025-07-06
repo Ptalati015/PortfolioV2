@@ -142,7 +142,7 @@ body {
 
   .hero-content {
     /* max-width: 50%; */
-    transform: translateX(-7rem); /* moves content left */
+    transform: translateX(-7rem); 
   }
 }
 
