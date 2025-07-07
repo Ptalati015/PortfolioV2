@@ -48,7 +48,7 @@
         </div>
       </div>
     </section>
-    <hr>
+    <hr />
 
     <!-- About Section -->
     <section class="section" id="about">
@@ -65,24 +65,11 @@
         </div>
       </div>
     </section>
- <hr>
+    <hr />
     <!-- Experience Section -->
     <section class="section" id="experience">
       <div class="container">
         <h2><span class="section-icon">💼</span> Experience</h2>
-
-        <div class="experience-item">
-          <div class="experience-title">Chief Technology Officer</div>
-          <div class="experience-company">Gyfr</div>
-          <div class="experience-period">Feb 2025 – Present</div>
-          <ul class="experience-achievements">
-            <li>
-              Led technical vision for fitness platform, increasing retention by
-              40%
-            </li>
-            <li>Managed product lifecycle and hands-on development</li>
-          </ul>
-        </div>
 
         <div class="experience-item">
           <div class="experience-title">Software Developer</div>
@@ -90,9 +77,59 @@
           <div class="experience-period">Aug 2024 – Present</div>
           <ul class="experience-achievements">
             <li>
-              Built .NET MVC apps and REST APIs for military learning tools
+              <strong>Developed</strong> and maintained C# .NET MVC applications
+              serving military personnel, collaborating directly with Defense
+              Department clients to gather requirements and deliver
+              mission-critical language learning solutions.
             </li>
-            <li>Optimized databases and deployment pipelines on IIS</li>
+            <li>
+              <strong> Engineered</strong> and deployed scalable RESTful APIs
+              using ASP.NET Core, AJAX, and Entity Framework, enabling seamless
+              data exchange across microservices.
+            </li>
+            <li>
+              <strong> Managed</strong> version control using GitLab and
+              contributed to CI/CD processes, participating in regular code
+              reviews to ensure code adheres to standards and best practices.
+            </li>
+            <li>
+              <strong>Deployed</strong> applications on IIS using automation,
+              optimizing server configurations for 30% faster load times and
+              enhanced security.
+            </li>
+            <li>
+              <strong>Designed</strong> and optimized MySQL databases, reducing
+              query response times by 25% through indexing and optimization.
+            </li>
+            <li>
+              <strong>Authored</strong> comprehensive system documentation,
+              streamlining onboarding and maintenance processes for future
+              developers.
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-title">Chief Technology Officer</div>
+          <div class="experience-company">Gyfr</div>
+          <div class="experience-period">Feb 2025 – Present</div>
+          <ul class="experience-achievements">
+            <li>
+              <strong>Managed</strong> Creating weekly tasks on Jira and and
+              leading and overseeing the development of a full-stack fitness
+              platform
+            </li>
+            <li>
+              <strong>Led</strong> the company's technical vision, driving
+              innovation in fitness technology while managing the full product
+              lifecycle from MVP to production for web and mobile platforms.
+            </li>
+            <li>
+              <strong>Directed</strong> hands on coding and product strategy,
+              defining application requirements and data structures to build
+              scalable solutions that resulted in a 40% increase in user
+              retention.
+            </li>
           </ul>
         </div>
 
@@ -109,7 +146,7 @@
         </div>
       </div>
     </section>
- <hr>
+    <hr />
     <!-- Projects Section -->
     <section class="section" id="projects">
       <div class="container">
@@ -150,7 +187,7 @@
         </div>
       </div>
     </section>
- <hr>
+    <hr />
     <!-- Contact Section -->
     <section class="section" id="contact">
       <div class="container">
@@ -185,29 +222,6 @@
 
     <script>
       // Theme toggle functionality
-      let isDarkMode = true;
-
-      function toggleTheme() {
-        isDarkMode = !isDarkMode;
-        const root = document.documentElement;
-        const themeIcon = document.getElementById("theme-icon");
-
-        if (isDarkMode) {
-          root.style.setProperty("--bg-dark", "#0A0A0A");
-          root.style.setProperty("--bg-light", "#1A1A1A");
-          root.style.setProperty("--text-light", "#FFFFFF");
-          root.style.setProperty("--text-gray", "#B0B0B0");
-          themeIcon.textContent = "🌙";
-        } else {
-          root.style.setProperty("--bg-dark", "#FAFAFA");
-          root.style.setProperty("--bg-light", "#FFFFFF");
-          root.style.setProperty("--text-light", "#333333");
-          root.style.setProperty("--text-gray", "#666666");
-          themeIcon.textContent = "☀️";
-        }
-      }
-
-      // Scroll to top functionality
       function scrollToTop() {
         window.scrollTo({
           top: 0,
