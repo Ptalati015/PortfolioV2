@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="favicon.ico" />
 
-    <style></style>
+    <style>
+      .modal-content {
+        background-image: linear-gradient(135deg, #f27c22, #8c1414) !important;
+        color:whitesmoke;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
 
@@ -22,11 +29,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
+            <div class="modal-body text-center">
+              <p class="mb-4"style="color:black">✨ Special message for you ✨</p>
+              
+              <button class="btn btn-success me-2" id="playButton">▶️ Play</button>
+              <button class="btn btn-danger" id="stopButton">⏹️ Stop</button>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
           </div>
         </div>
       </div>
@@ -43,9 +51,13 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="theme-toggle" onclick="toggleTheme()">
-          <span id="theme-icon">🌙</span>
+        <button class="theme-toggle" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <span id="theme-icon">Special Message</span>
         </button>
+        <!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button> -->
       </nav>
     </header>
 
