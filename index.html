@@ -32,7 +32,7 @@
             <div class="modal-body text-center">
               <p class="mb-4"style="color:black">✨ Special message for you ✨</p>
               <figure>
-                <audio controls src="./portfolio_clip.mp3"></audio>
+                <audio  id="myAudio" controls src="./portfolio_clip.mp3"></audio>
               </figure>
           </div>
           </div>
@@ -420,6 +420,12 @@
       // document.addEventListener("DOMContentLoaded", function () {
       //   console.log("DOM fully loaded and parsed");
       // });
+      const myModalEl = document.getElementById('staticBackdrop')
+      myModalEl.addEventListener('hidden.bs.modal', event => {
+        const audio = document.getElementById('myAudio');
+        audio.pause();
+        audio.currentTime = 0; 
+      })
 
       // Show/hide scroll to top button
       window.addEventListener("scroll", function () {
