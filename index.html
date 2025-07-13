@@ -12,7 +12,7 @@
     <style>
       .modal-content {
         background-image: linear-gradient(135deg, #f27c22, #8c1414) !important;
-        color:whitesmoke;
+        color:black;
         font-weight: bold;
         text-align: center;
       }
@@ -31,9 +31,9 @@
           <div class="modal-body">
             <div class="modal-body text-center">
               <p class="mb-4"style="color:black">✨ Special message for you ✨</p>
-              
-              <button class="btn btn-success me-2" id="playButton">▶️ Play</button>
-              <button class="btn btn-danger" id="stopButton">⏹️ Stop</button>
+              <figure>
+                <audio controls src="./portfolio_clip.mp3"></audio>
+              </figure>
           </div>
           </div>
         </div>
@@ -417,9 +417,9 @@
         });
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM fully loaded and parsed");
-      });
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   console.log("DOM fully loaded and parsed");
+      // });
 
       // Show/hide scroll to top button
       window.addEventListener("scroll", function () {

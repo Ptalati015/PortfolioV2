@@ -16,10 +16,10 @@
   --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-        background-image: var(--gradient) !important;
-        color:whitesmoke;
-        font-weight: bold;
-        text-align: center;
+    background-image: var(--gradient) !important;
+    color:whitesmoke;
+    font-weight: bold;
+    text-align: center;
 }
 
 .modal-body .btn {
