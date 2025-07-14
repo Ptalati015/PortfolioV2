@@ -22,9 +22,9 @@
     text-align: center;
 }
 
-.modal-dialog {
+/* .modal-dialog {
   top:50x;
-}
+} */
 
 .modal-body .btn {
   background: var(--bg-dark);
