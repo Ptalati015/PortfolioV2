@@ -42,14 +42,15 @@
 
     <!-- Header -->
     <header class="header">
-      <nav class="nav container">
+      <nav class="nav container navbar-brand">
+        <button class="hamburger" id="hamburger">&#9776;</button>  <!-- ☰ icon -->
         <div class="logo">PT</div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <button class="theme-toggle" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           <span id="theme-icon">Special Message</span>
@@ -436,6 +437,11 @@
           scrollTop.classList.remove("visible");
         }
       });
+
+      document.getElementById('hamburger').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+      });
+
 
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
