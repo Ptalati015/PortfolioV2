@@ -3,7 +3,8 @@
 Personal portfolio for Preet Talati. Static site: `index.html` + `index.css`, no framework and no build step. (Bootstrap was removed in Sep 2026. The few
 styles it provided are copied at the top of `index.css` under `:where(.home)`; the home page's `<body>` has class `home`.)
 Case study pages live in `projects/` (currently `projects/no2sql.html`). They link `../index.css` and add `.case-*` classes.
-Feature specs live in `specs/`.
+Feature specs live in `specs/` while in progress. Delete a spec once its PR is merged (git keeps the history); the folder
+stays with a `.gitkeep`.
 Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.webp`/`image-960.webp`/`image-960.jpg` via
 `<picture>`; regenerate those with Pillow if the photo changes, `Preet_Talati_Resume.pdf` for the hero download button).
 
@@ -46,12 +47,16 @@ Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.we
   `max-width`, or it clips on the left edge.
 
 ## Workflow
-- Work on a new branch, never directly on `main`. Open a PR only when asked.
-- Before pushing a visual change, check it at 1280px and 375px wide with Playwright (Chromium at
-  `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` in cloud sessions; serve with `python3 -m http.server`).
-  Confirm there's no horizontal scroll and no JS errors (Bootstrap CDN errors are expected when the sandbox blocks the network).
-  Send the screenshots to Preet before opening a PR.
+- Work on a new branch off the latest `main`, never directly on `main`.
+- **Merge rule (approved by Preet):** once Preet approves the screenshots ("looks good", "ship it" or similar), open the
+  PR and merge it into `main` without asking again. If the UI already opened a PR for the branch, merge that one. If Preet
+  asks for changes, make them, re-check, send new screenshots, and wait for approval again. Never merge before approval.
+- **Checks** (tools are pre-installed by `.claude/hooks/session-start.sh` in cloud sessions; locally run `npm install` in `tools/`):
+  - `cd tools && npm run check`: renders every page (`index.html` + `projects/*.html`) at 1280px and 375px, saves
+    screenshots to `tools/out/`, and fails on horizontal scroll or JS errors.
+  - `cd tools && npm run lighthouse`: fails if accessibility, best practices or SEO fall below 100, or performance below 95.
+  - Run both before pushing any change that affects the page, and send the screenshots from `tools/out/` to Preet.
 - Accessibility is a requirement: new motion must be skipped under `prefers-reduced-motion`, new buttons need an
-  accessible name, decorative emoji get `aria-hidden="true"`, and Lighthouse should stay at 100 for accessibility.
-  Run Lighthouse with `npx lighthouse` and `CHROME_PATH` set to the Chromium above.
-- Use plan mode for multi-section rewrites; small copy edits can go straight to the change.
+  accessible name, and decorative emoji get `aria-hidden="true"`.
+- Use `/spec-driven-dev` (or plan mode) for new features and multi-section rewrites; small copy edits can go straight to
+  the change.
