@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No2SQL Case Study - Preet Talati</title>
+    <meta
+      name="description"
+      content="How Preet Talati built No2SQL, an MCP server and NuGet package that infers relationships in MongoDB and generates SQL schemas, seed data and ER diagrams."
+    />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
+        <div class="logo case-logo">PT</div>
+        <a
+          class="theme-toggle"
+          href="https://github.com/Ptalati015/No2SQL"
+          target="_blank"
+          rel="noopener"
+          >View on GitHub</a
+        >
+      </nav>
+    </header>
+
+    <main class="container case-main">
+      <section class="case-hero">
+        <h1>No2SQL</h1>
+        <p class="case-tagline">
+          An MCP server and NuGet package that looks at a live MongoDB database,
+          works out how the collections relate, and generates the SQL schema,
+          seed data and ER diagrams to move it to a relational database. You
+          drive it by asking your AI coding assistant.
+        </p>
+        <div class="project-tech" style="margin-top: 1.5rem">
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">.NET 10</span>
+          <span class="tech-tag">MCP</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">NuGet</span>
+          <span class="tech-tag">GitHub Actions</span>
+        </div>
+        <div class="project-links">
+          <a
+            class="project-link"
+            href="https://github.com/Ptalati015/No2SQL"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            class="project-link"
+            href="https://www.nuget.org/packages/No2SQL"
+            target="_blank"
+            rel="noopener"
+            >NuGet</a
+          >
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>The problem</h2>
+        <p>
+          Moving from MongoDB to a relational database is slow, manual work.
+          Someone has to open every collection to see what the documents look
+          like, guess which fields point at other collections, hand-write a
+          <code>CREATE TABLE</code> for each one, write <code>INSERT</code>
+          scripts to move the data, and then draw the ER diagram so the rest
+          of the team understands the result.
+        </p>
+        <p>
+          MongoDB doesn't enforce relationships, so the hardest part is the
+          guessing. Get a foreign key wrong and the migration either fails or
+          silently loses meaning.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>The approach</h2>
+        <p>
+          No2SQL reads the data itself instead of relying on documentation or
+          naming conventions alone:
+        </p>
+        <ul class="experience-achievements">
+          <li>
+            <strong>Sample</strong> up to 300 documents per collection and record
+            each field's type and whether it's always present.
+          </li>
+          <li>
+            <strong>Find candidates:</strong> fields whose names look like
+            references (<code>*_id</code>, <code>*Id</code>).
+          </li>
+          <li>
+            <strong>Confirm with values:</strong> normalize the IDs and check how
+            many of a candidate field's values actually exist as primary keys in
+            another collection. That ratio becomes a
+            <strong>confidence score</strong> for the relationship.
+          </li>
+          <li>
+            <strong>Generate:</strong> MySQL tables with foreign keys, INSERT
+            seed scripts, and ER diagrams in Mermaid, PlantUML and GraphViz DOT,
+            all from the same analysis.
+          </li>
+        </ul>
+        <p>
+          All of it is exposed as 10 MCP tools, so a developer can type
+          <em>"Generate SQL schema for database mydb"</em> in GitHub Copilot,
+          VS Code or Claude Desktop and get working output back.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Architecture</h2>
+        <p>
+          A .NET 10 MCP host that talks over stdio, plus four focused libraries
+          and a test harness. Every request passes through a guardrails layer
+          before it reaches the database.
+        </p>
+        <div class="flow" aria-label="Request flow diagram">
+          <div class="flow-box">
+            <strong>AI assistant</strong><span>Copilot · VS Code · Claude</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>MCP host</strong><span>SchemaTools · stdio</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Guardrails</strong><span>validate every input</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Core</strong><span>sampling · inference</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Sql · Visuals</strong><span>DDL · seeds · ERDs</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Key decisions</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3>Confirm with data, not just names</h3>
+            <p>
+              A field called <code>userId</code> is only a guess. Checking its
+              values against real primary keys turns the guess into evidence,
+              and the confidence score shows how strong that evidence is.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Let people override</h3>
+            <p>
+              Inference is a heuristic, so it can be wrong. The advanced schema
+              tool accepts explicit relationship overrides, so a developer can
+              correct or add links without fighting the tool.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Stream the seed data</h3>
+            <p>
+              Seeders make two passes. The first fixes a deterministic column
+              order, and the second emits INSERT chunks that can each run on
+              their own, so memory stays bounded on large collections. Nested
+              arrays and documents are stored as JSON.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Secure by default</h3>
+            <p>
+              An AI assistant is calling into a real database, so every input
+              is validated: identifier format and length, an optional database
+              allowlist, <code>admin</code>/<code>config</code>/<code>local</code>
+              blocked by default, and detection of prompt-injection markers.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>No .NET required</h3>
+            <p>
+              The NuGet package ships self-contained executables for Windows,
+              Linux and macOS (6 platform builds), so anyone can run it without
+              installing .NET or creating a project.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Gate every release</h3>
+            <p>
+              A GitHub Actions pipeline builds the release, scans for vulnerable
+              packages, runs a gitleaks secret scan, checks that no debug
+              symbols ship in the package, and verifies the MCP manifest
+              before anything is published.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Results</h2>
+        <div class="stats">
+          <div class="stat"><strong>1.1K+</strong><span>downloads on NuGet</span></div>
+          <div class="stat"><strong>5</strong><span>published releases</span></div>
+          <div class="stat"><strong>10</strong><span>MCP tools</span></div>
+          <div class="stat"><strong>3</strong><span>ERD formats</span></div>
+          <div class="stat"><strong>6</strong><span>platform builds</span></div>
+        </div>
+        <p>
+          Published as an open-source (MIT) package, it went from 0.1.0 to 1.0.3
+          between May and June 2026.
+        </p>
+        <p>
+          <a class="cta-button" href="../index.html#contact">Talk to me about it</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
