@@ -1,9 +1,11 @@
 # PortfolioV2
 
-Personal portfolio for Preet Talati. Static site: `index.html` + `index.css`, Bootstrap 5.2.3 from CDN, no build step.
+Personal portfolio for Preet Talati. Static site: `index.html` + `index.css`, no framework and no build step. (Bootstrap was removed in Sep 2026. The few
+styles it provided are copied at the top of `index.css` under `:where(.home)`; the home page's `<body>` has class `home`.)
 Case study pages live in `projects/` (currently `projects/no2sql.html`). They link `../index.css` and add `.case-*` classes.
 Feature specs live in `specs/`.
-Assets live in `assets/` (`image.jpg` headshot, `Preet_Talati_Resume.pdf` for the hero download button).
+Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.webp`/`image-960.webp`/`image-960.jpg` via
+`<picture>`; regenerate those with Pillow if the photo changes, `Preet_Talati_Resume.pdf` for the hero download button).
 
 ## Audience and voice
 - Written for recruiters and hiring managers for Software Engineer, Forward Deployed Engineer and Product Engineer roles.
@@ -32,6 +34,7 @@ Assets live in `assets/` (`image.jpg` headshot, `Preet_Talati_Resume.pdf` for th
   Sep 2026) is labeled "on NuGet" because it changes.
 
 ## Design rules
+- Text must pass WCAG AA contrast (4.5:1). The dark red `--secondary-color` is for backgrounds/accents only, never text.
 - Keep the existing dark theme and orange→red palette (`--primary-color: #f27c22`, `--secondary-color: #8c1414`,
   `--gradient` in `index.css`). Don't introduce new colors.
 - Reuse existing classes: `.card`, `.experience-item`, `.experience-subrole`, `.experience-note`, `.skill-item`, `.tech-tag`,
@@ -48,4 +51,7 @@ Assets live in `assets/` (`image.jpg` headshot, `Preet_Talati_Resume.pdf` for th
   `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` in cloud sessions; serve with `python3 -m http.server`).
   Confirm there's no horizontal scroll and no JS errors (Bootstrap CDN errors are expected when the sandbox blocks the network).
   Send the screenshots to Preet before opening a PR.
+- Accessibility is a requirement: new motion must be skipped under `prefers-reduced-motion`, new buttons need an
+  accessible name, decorative emoji get `aria-hidden="true"`, and Lighthouse should stay at 100 for accessibility.
+  Run Lighthouse with `npx lighthouse` and `CHROME_PATH` set to the Chromium above.
 - Use plan mode for multi-section rewrites; small copy edits can go straight to the change.
