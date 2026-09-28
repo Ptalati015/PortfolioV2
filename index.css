@@ -732,6 +732,12 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.step-label {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-style: normal;
+}
+
 .step .step-example {
   color: var(--text-gray);
   font-size: 0.9rem;
