@@ -2,7 +2,7 @@
 
 Personal portfolio for Preet Talati. Static site: `index.html` + `index.css`, no framework and no build step. (Bootstrap was removed in Sep 2026. The few
 styles it provided are copied at the top of `index.css` under `:where(.home)`; the home page's `<body>` has class `home`.)
-Case study pages live in `projects/` (currently `projects/no2sql.html`). They link `../index.css` and add `.case-*` classes.
+Case study pages live in `projects/` (currently `no2sql.html` and `md2pdf.html`). They link `../index.css` and add `.case-*` classes.
 Feature specs live in `specs/` while in progress. Delete a spec once its PR is merged (git keeps the history); the folder
 stays with a `.gitkeep`.
 Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.webp`/`image-960.webp`/`image-960.jpg` via
@@ -28,9 +28,12 @@ Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.we
 - **UIC**: B.S. Computer Science, Summa Cum Laude, GPA 3.92/4.0; Teaching Assistant Jun 2023 – May 2024.
 - Certifications: CompTIA Security+, Agile Foundations, The Complete 2024 Web Development Bootcamp.
 - Database at DLIFLC is SQL Server (not MySQL).
-- Public repos linked from project cards: No2SQL → `Ptalati015/No2SQL` (+ NuGet `No2SQL`), Weather MCP → `MCP_DEMO`,
+- Public repos linked from project cards: No2SQL → `Ptalati015/No2SQL` (+ NuGet `No2SQL`), MD2PDF → `Ptalati015/MD2PDF`
+  (+ live demo https://md2pdf-io.vercel.app/), Weather MCP → `MCP_DEMO`,
   STAY SAFE → `stay-safe`, Traffic Crashes → `viz-data-chicago-traffic-people`. Poker, HTTP Server and MovieLens have no
   public repo, so they get no links.
+- MD2PDF facts come from its source code (the repo README is still the Vite template). Its PDF export is image-based
+  (html2canvas + jsPDF), so don't claim selectable or searchable PDF text.
 - No2SQL facts come from its repo README and `docs/No2SQL_Specification.docx`. Its NuGet download count (1.1K+ as of
   Sep 2026) is labeled "on NuGet" because it changes.
 

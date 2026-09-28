@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MD2PDF Case Study - Preet Talati</title>
+    <meta
+      name="description"
+      content="How Preet Talati built MD2PDF, a Markdown-to-PDF editor that runs entirely in the browser with a live A4 preview, sanitized parsing and page-aware export."
+    />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="header">
+      <nav class="nav container">
+        <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
+        <div class="logo case-logo">PT</div>
+        <a
+          class="theme-toggle"
+          href="https://md2pdf-io.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          >Try it live</a
+        >
+      </nav>
+    </header>
+
+    <main id="main" class="container case-main" tabindex="-1">
+      <section class="case-hero">
+        <h1>MD2PDF</h1>
+        <p class="case-tagline">
+          A Markdown-to-PDF editor that runs entirely in your browser. You type,
+          it renders a live A4 preview, and you export a clean PDF. Nothing is
+          uploaded, so your document never leaves your machine.
+        </p>
+        <div class="project-tech" style="margin-top: 1.5rem">
+          <span class="tech-tag">React 19</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Tailwind CSS</span>
+          <span class="tech-tag">Vite</span>
+          <span class="tech-tag">Marked</span>
+          <span class="tech-tag">DOMPurify</span>
+          <span class="tech-tag">html2canvas</span>
+          <span class="tech-tag">jsPDF</span>
+        </div>
+        <div class="project-links">
+          <a
+            class="project-link"
+            href="https://md2pdf-io.vercel.app/"
+            target="_blank"
+            rel="noopener"
+            >Live demo</a
+          >
+          <a
+            class="project-link"
+            href="https://github.com/Ptalati015/MD2PDF"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>The problem</h2>
+        <p>
+          I kept hitting the same loop: write something in Markdown, then bounce
+          over to a heavy third-party converter or an AI tool just to get a
+          clean PDF. It worked, but every time it meant extra steps, and pasting
+          my documents into someone else's service.
+        </p>
+        <p>
+          I wanted the opposite: type, see exactly what the page will look like,
+          export. No uploads, no waiting, no account.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>The approach</h2>
+        <ul class="experience-achievements">
+          <li>
+            <strong>Parse and sanitize:</strong> Markdown goes through Marked
+            with GitHub-flavored Markdown turned on, and the resulting HTML is
+            cleaned with DOMPurify before it's shown, so pasted content can't
+            inject scripts.
+          </li>
+          <li>
+            <strong>Lay it out as real pages:</strong> the preview is drawn on
+            A4-sized pages (794 × 1122 px at 96 DPI). A pagination pass moves any
+            block that would straddle a page boundary onto the next page, and the
+            preview shows the page breaks and page count as you type.
+          </li>
+          <li>
+            <strong>Export what you see:</strong> the same HTML is rendered
+            off-screen at A4 width, captured at 2× resolution with html2canvas,
+            cut into page-sized slices, and assembled into a PDF with jsPDF.
+          </li>
+          <li>
+            <strong>Make it pleasant to write in:</strong> a formatting toolbar
+            with keyboard shortcuts, custom text colors with quick presets,
+            synchronized scrolling, three layouts (Split, Focus editor, Preview),
+            dark and light themes, <code>.md</code> drag-and-drop, and a short
+            first-run guide.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Architecture</h2>
+        <p>
+          A React 19 + TypeScript single-page app built with Vite and styled
+          with Tailwind CSS. There is no backend: it's static files on Vercel,
+          and all the work happens in the browser.
+        </p>
+        <div class="flow" aria-label="Data flow diagram">
+          <div class="flow-box">
+            <strong>Editor</strong><span>toolbar · shortcuts · drop zone</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Parser</strong><span>Marked (GFM) · DOMPurify</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Paginator</strong><span>shared A4 page-break pass</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Preview</strong><span>live A4 pages</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Exporter</strong><span>html2canvas · jsPDF</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Key decisions</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3>Nothing leaves the browser</h3>
+            <p>
+              Privacy was the reason to build it, so parsing, preview and PDF
+              generation all run client-side. The app code makes no network
+              requests with your content, and there's no server to run or pay
+              for.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>One paginator for preview and PDF</h3>
+            <p>
+              The preview and the exporter call the same page-break function, so
+              the pages you see while typing are the pages you get in the file.
+              No surprises after you click export.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Keep headings with their content</h3>
+            <p>
+              A heading looks ahead at the start of the next block, so it never
+              ends up alone at the bottom of a page. Lists taller than a page
+              break between items instead of through the middle of one.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Sanitize, but allow what documents need</h3>
+            <p>
+              DOMPurify strips anything dangerous, with a small allowlist for
+              what real documents use: <code>details</code>/<code>summary</code>,
+              <code>kbd</code>, <code>mark</code>, and inline styles for custom
+              text colors.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Scroll sync without feedback loops</h3>
+            <p>
+              Editor and preview scroll by proportion. Whichever pane you're
+              scrolling takes the lead for a moment, so the two panes don't keep
+              nudging each other back and forth.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Fidelity first</h3>
+            <p>
+              Capturing the rendered page as an image makes the PDF match the
+              preview exactly, including colors and layout. The tradeoff is that
+              PDF text isn't selectable yet, which is the natural next
+              improvement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Results</h2>
+        <div class="stats">
+          <div class="stat"><strong>0</strong><span>server uploads</span></div>
+          <div class="stat"><strong>A4</strong><span>page-accurate preview</span></div>
+          <div class="stat"><strong>3</strong><span>editor layouts</span></div>
+          <div class="stat"><strong>2</strong><span>themes, remembered</span></div>
+          <div class="stat"><strong>4</strong><span>step first-run guide</span></div>
+        </div>
+        <p>
+          Live on Vercel and open source on GitHub. Try it with any Markdown
+          file you have.
+        </p>
+        <p>
+          <a class="cta-button" href="../index.html#contact">Talk to me about it</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
