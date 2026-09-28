@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Preet Talati - Portfolio</title>
+    <title>Preet Talati - Software Engineer</title>
+    <meta
+      name="description"
+      content="Preet Talati builds software end to end: from discovery with users and stakeholders to secure, production systems in C#/.NET, React, TypeScript and SQL, plus AI developer tooling with MCP."
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,57 +21,8 @@
     ></script>
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="favicon.ico" />
-
-    <style>
-      .modal-content {
-        background-image: linear-gradient(135deg, #f27c22, #8c1414) !important;
-        color: black;
-        font-weight: bold;
-        text-align: center;
-      }
-    </style>
   </head>
   <body>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="staticBackdrop"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1
-              class="modal-title fs-5 text-center bold"
-              id="staticBackdropLabel"
-            >
-              Enjoy
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="modal-body text-center">
-              <p class="mb-4" style="color: black">
-                ✨ Special message for you ✨
-              </p>
-              <figure>
-                <audio id="myAudio" controls src="./portfolio_clip.mp3"></audio>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Header -->
     <header class="header">
       <nav class="nav container navbar-brand">
@@ -77,29 +32,19 @@
         <ul class="nav-links">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item">
-            <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
-        <button
-          class="theme-toggle"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-        >
-          <span id="theme-icon">Special Message</span>
-        </button>
-        <!-- Button trigger modal
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button> -->
+        <a class="theme-toggle" href="#contact">Let's talk</a>
       </nav>
     </header>
 
@@ -110,13 +55,25 @@
         <div class="hero-content">
           <div class="avatar">PT</div>
           <h1>Preet Talati</h1>
-          <p>Software Developer | Full Stack Engineer | Security+ Certified</p>
+          <p>
+            I build software end to end, from the first conversation with users
+            to secure production systems people rely on.
+          </p>
           <div class="skills">
-            <span class="skill-chip">💻 Full Stack</span>
+            <span class="skill-chip">🚀 0→1 Builder</span>
+            <span class="skill-chip">🤝 Stakeholder-facing</span>
+            <span class="skill-chip">🧱 .NET · React · TypeScript</span>
+            <span class="skill-chip">🤖 AI / MCP Tooling</span>
             <span class="skill-chip">🔒 Security+</span>
-            <span class="skill-chip">👨‍💼 CTO</span>
-            <span class="skill-chip">⚡ .NET</span>
-            <span class="skill-chip">⚛️ React</span>
+          </div>
+          <div class="hero-actions">
+            <a
+              class="cta-button"
+              href="./assets/Preet_Talati_Resume.pdf"
+              download
+              >Download résumé</a
+            >
+            <a class="cta-button cta-outline" href="#contact">Get in touch</a>
           </div>
         </div>
 
@@ -133,322 +90,292 @@
         <h2><span class="section-icon">🏆</span> About Me</h2>
         <div class="card">
           <p style="font-size: 1.2rem; line-height: 1.8">
-            Results-driven Software Developer experienced in full-stack
-            development using C#, .NET, React, SQL, and more. Proven success
-            building scalable RESTful APIs, secure web apps, and microservices.
-            CompTIA Security+ certified with expertise in Agile, CI/CD, and
-            database optimization.
+            I'm a software engineer who likes owning the whole problem. I start
+            with the people who will use what I build: I sit with them, learn
+            how their work actually happens, and find where it breaks. Then I
+            design, build, ship and support the fix. I've taken products from 0
+            to 1 in a government agency and at a startup, including a platform
+            that grew to 10,000+ users.
+          </p>
+          <p style="font-size: 1.2rem; line-height: 1.8">
+            Most of my work is full stack in C#/.NET, React, TypeScript and SQL.
+            It connects to the systems an organization already runs, such as
+            identity providers, enterprise data and payment platforms, and it
+            has to pass real security and compliance gates. I also build AI
+            developer tooling with MCP, tool orchestration and prompt design.
+            I'm CompTIA Security+ certified.
+          </p>
+          <p class="education-line">
+            🎓 <strong>University of Illinois at Chicago</strong>, B.S.
+            Computer Science, Summa Cum Laude, GPA 3.92/4.0
           </p>
         </div>
       </div>
     </section>
     <hr />
-    <section class="section" id="skills">
-      <div class="container">
-        <h2><span class="section-icon">🛠️</span> Certifications & Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <h3>🎓 Certifications</h3>
-            <ul>
-              <li>CompTIA Security+</li>
-              <li>The Complete 2024 Web Development Bootcamp</li>
-              <li>Agile Foundations</li>
-            </ul>
-          </div>
 
-          <div class="skill-item">
-            <h3>🧠 Microsoft Technologies</h3>
-            <ul>
-              <li>C#</li>
-              <li>.NET Core</li>
-              <li>ASP.NET MVC</li>
-              <li>Entity Framework</li>
-            </ul>
-          </div>
-
-          <div class="skill-item">
-            <h3>💻 Programming Languages</h3>
-            <ul>
-              <li>Java, C, C++</li>
-              <li>Python, SQL</li>
-              <li>JavaScript, TypeScript</li>
-              <li>HTML/CSS</li>
-            </ul>
-          </div>
-
-          <div class="skill-item">
-            <h3>🗄️ Databases</h3>
-            <ul>
-              <li>MySQL</li>
-              <li>NoSQL (Firebase & MongoDB)</li>
-              <li>T-SQL</li>
-            </ul>
-          </div>
-
-          <div class="skill-item">
-            <h3>🧩 Frameworks & Libraries</h3>
-            <ul>
-              <li>React, Redux</li>
-              <li>Node.js, Express.js</li>
-              <li>jQuery, Bootstrap</li>
-              <li>Flutter</li>
-            </ul>
-          </div>
-
-          <div class="skill-item">
-            <h3>🚀 DevOps & Tools</h3>
-            <ul>
-              <li>Git, GitLab, CI/CD</li>
-              <li>Jira, Agile/Scrum</li>
-              <li>RESTful APIs, Microservices</li>
-            </ul>
-          </div>
-
-          <div class="skill-item">
-            <h3>☁️ Cloud Services</h3>
-            <ul>
-              <li>Google Cloud Platform (GCP)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr />
     <!-- Experience Section -->
     <section class="section" id="experience">
       <div class="container">
         <h2><span class="section-icon">💼</span> Experience</h2>
 
         <div class="experience-item">
-          <div class="experience-title">Software Developer</div>
-          <div class="experience-company">Defense Language Institute</div>
-          <div class="experience-period">Aug 2024 – Present</div>
-          <ul class="experience-achievements">
-            <li>
-              <strong>Developed</strong> and maintained C# .NET MVC applications
-              serving military personnel, collaborating directly with Defense
-              Department clients to gather requirements and deliver
-              mission-critical language learning solutions.
-            </li>
-            <li>
-              <strong> Engineered</strong> and deployed scalable RESTful APIs
-              using ASP.NET Core, AJAX, and Entity Framework, enabling seamless
-              data exchange across microservices.
-            </li>
-            <li>
-              <strong> Managed</strong> version control using GitLab and
-              contributed to CI/CD processes, participating in regular code
-              reviews to ensure code adheres to standards and best practices.
-            </li>
-            <li>
-              <strong>Deployed</strong> applications on IIS using automation,
-              optimizing server configurations for 30% faster load times and
-              enhanced security.
-            </li>
-            <li>
-              <strong>Designed</strong> and optimized MySQL databases, reducing
-              query response times by 25% through indexing and optimization.
-            </li>
-            <li>
-              <strong>Authored</strong> comprehensive system documentation,
-              streamlining onboarding and maintenance processes for future
-              developers.
-            </li>
-          </ul>
+          <div class="experience-company">
+            Defense Language Institute Foreign Language Center (DLIFLC)
+          </div>
+          <div class="experience-note">Contract engineer · NexTech</div>
+
+          <div class="experience-subrole">
+            <div class="experience-title">Senior Software Developer</div>
+            <div class="experience-period">Aug 2026 – Present</div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Lead</strong> projects end to end as the main technical
+                point of contact for government clients, from the first
+                requirements conversation through delivery and support.
+              </li>
+              <li>
+                <strong>Run</strong> requirements gathering with multiple
+                government stakeholders. I turn operational workflows and pain
+                points into scoped, buildable solutions.
+              </li>
+              <li>
+                <strong>Design</strong> solutions that reuse the organization's
+                existing software where it fits, and build new applications
+                where it doesn't. I weigh cost, security and long-term
+                maintainability.
+              </li>
+              <li>
+                <strong>Architect</strong> and build full-stack C#/ASP.NET Core
+                applications and SQL Server data models. I split business logic
+                into modular services behind internal REST APIs and stay
+                hands-on in the code every day.
+              </li>
+              <li>
+                <strong>Own</strong> identity and access across the application
+                portfolio: Windows Auth, Entra ID, Okta and custom CAC
+                authentication, with RBAC, certificate validation and directory
+                integration.
+              </li>
+              <li>
+                <strong>Own</strong> integrations with enterprise systems of
+                record across Azure, Azure DevOps, Dynamics/Dataverse, M365 and
+                AD.
+              </li>
+              <li>
+                <strong>Maintain</strong> the GitLab CI/CD pipelines, including
+                SAST and dependency scanning and IIS releases across
+                DEV/STAGING/PROD, so every release is repeatable and passes
+                security gates.
+              </li>
+              <li>
+                <strong>Coordinate</strong> delivery across government
+                personnel, QA, Security and DevOps so releases ship secure and
+                compliant.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-subrole">
+            <div class="experience-title">Software Developer</div>
+            <div class="experience-period">Aug 2024 – Aug 2026</div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Owned</strong> full-stack products from discovery to
+                production. I worked directly with government stakeholders and
+                turned business needs into working C#/.NET, API and SQL
+                solutions.
+              </li>
+              <li>
+                <strong>Led</strong> 0→1 development of multiple internal
+                applications. I compared approaches against user needs,
+                feasibility, security and maintainability instead of just
+                closing tickets.
+              </li>
+              <li>
+                <strong>Integrated</strong> apps with enterprise systems across
+                a Microsoft-aligned stack (Azure, Azure DevOps,
+                Dynamics/Dataverse, M365, AD), using REST APIs and governed
+                relational data models.
+              </li>
+              <li>
+                <strong>Built</strong> identity and access across applications
+                with Windows Auth, Entra ID, Okta and custom CAC
+                authentication. This covered custom authorization logic, RBAC,
+                certificate validation and directory integration.
+              </li>
+              <li>
+                <strong>Implemented</strong> GitLab CI/CD pipelines with build,
+                test, dependency scanning and SAST, deploying to IIS across
+                DEV/STAGING/PROD. I configured runners and automated release
+                notifications.
+              </li>
+              <li>
+                <strong>Improved</strong> SQL Server query performance by ~25%
+                through indexing, normalization and query tuning.
+              </li>
+              <li>
+                <strong>Engineered</strong> a Python crawling and auditing tool
+                for IIS-hosted apps. It handles CAC (Windows/Negotiate)
+                authentication, runs BFS crawls with depth and queue limits,
+                matches multilingual terms and produces structured Excel
+                reports.
+              </li>
+              <li>
+                <strong>Applied</strong> MVC, Repository, Factory and
+                Dependency Injection patterns to keep codebases testable and
+                maintainable, and wrote architecture documentation for them.
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="experience-item">
-          <div class="experience-title">Chief Technology Officer</div>
           <div class="experience-company">Gyfr</div>
-          <div class="experience-period">Feb 2025 – Present</div>
-          <ul class="experience-achievements">
-            <li>
-              <strong>Managed</strong> Creating weekly tasks on Jira and and
-              leading and overseeing the development of a full-stack fitness
-              platform
-            </li>
-            <li>
-              <strong>Led</strong> the company's technical vision, driving
-              innovation in fitness technology while managing the full product
-              lifecycle from MVP to production for web and mobile platforms.
-            </li>
-            <li>
-              <strong>Directed</strong> hands on coding and product strategy,
-              defining application requirements and data structures to build
-              scalable solutions that resulted in a 40% increase in user
-              retention.
-            </li>
-          </ul>
+          <div class="experience-note">
+            Fitness platform for web and mobile, built from 0 to 1
+          </div>
+
+          <div class="experience-subrole">
+            <div class="experience-title">Chief Technology Officer</div>
+            <div class="experience-period">Feb 2025 – Aug 2026</div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Owned</strong> technical vision and product delivery for
+                the web and mobile platform, from MVP to production.
+              </li>
+              <li>
+                <strong>Defined</strong> application requirements and data
+                models, and ran the roadmap and weekly planning in Jira with
+                Agile/Scrum.
+              </li>
+              <li>
+                <strong>Stayed</strong> hands-on in the code. I shipped
+                features, learned from how customers actually used them, and
+                iterated the product around customer and business needs.
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-subrole">
+            <div class="experience-title">Lead Software Developer</div>
+            <div class="experience-period">Jun 2024 – Feb 2025</div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Architected</strong> and shipped the backend API on
+                Firebase Cloud Functions (Node.js, TypeScript, Express). It
+                runs sessions, subscriptions and payments, and the platform grew
+                to 10,000+ users.
+              </li>
+              <li>
+                <strong>Built</strong> event-driven billing with Stripe
+                webhooks, including idempotency handling, subscription
+                lifecycle management and billing-state sync. I also built
+                deferred plan changes aligned to billing cycles.
+              </li>
+              <li>
+                <strong>Built</strong> an end-to-end booking system with
+                conflict detection, timezone-aware scheduling and real-time
+                state updates for multi-session workflows.
+              </li>
+              <li>
+                <strong>Centralized</strong> the React/Redux/Axios API client
+                layer across 50+ routes and split the architecture into client,
+                trainer, session and subscription domains, which made new
+                features faster to build.
+              </li>
+              <li>
+                <strong>Added</strong> metrics instrumentation and used it to
+                tune the app, improving performance by 40%.
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="experience-item">
-          <div class="experience-title">Lead Software Developer</div>
-          <div class="experience-company">Gyfr</div>
-          <div class="experience-period">Jun 2024 – Feb 2025</div>
-          <ul class="experience-achievements">
-            <li>
-              <strong>Architected</strong> a full-stack fitness platform using
-              React, TypeScript, and Firebase, scaling to support over 10,000
-              users.
-            </li>
-            <li>
-              <strong>Established</strong> and managed CI/CD pipelines and
-              formal code review processes, improving deployment efficiency by
-              40%.
-            </li>
-            <li>
-              <strong>Managed</strong> the product roadmap and technical
-              strategy using Agile/Scrum methodologies within Jira.
-            </li>
-          </ul>
-        </div>
-        <div class="experience-item">
-          <div class="experience-title">Teaching Assistant</div>
           <div class="experience-company">
             University of Illinois at Chicago
           </div>
-          <div class="experience-period">Jun 2023 – May 2024</div>
-          <ul class="experience-achievements">
-            <li>
-              <strong>Mentored</strong> and guided students in mastering data
-              structures and optimizing algorithms for efficient memory
-              management in C and assembly languages.
-            </li>
-            <li>
-              <strong>Evaluated</strong> assignments and exams for a large
-              cohort of over 100 students, emphasizing mastery of data
-              representation, heap manipulation, and memory security techniques
-              across diverse operating systems.
-            </li>
-          </ul>
+          <div class="experience-subrole">
+            <div class="experience-title">Teaching Assistant</div>
+            <div class="experience-period">Jun 2023 – May 2024</div>
+            <ul class="experience-achievements">
+              <li>
+                <strong>Mentored</strong> and graded 100+ students in C and
+                assembly, covering data structures, memory management, heap
+                manipulation and memory security.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
     <hr />
+
     <!-- Projects Section -->
     <section class="section" id="projects">
       <div class="container">
         <h2><span class="section-icon">🚀</span> Projects</h2>
 
         <div class="grid">
-          <!-- Networked 3 Card Poker -->
+          <!-- No2SQL -->
           <div class="card">
             <h3 style="color: var(--primary-color); margin-bottom: 1rem">
-              Networked 3 Card Poker
+              No2SQL
             </h3>
             <ul class="experience-achievements">
               <li>
-                A multithreaded, networked 3-card Poker game in Java, utilizing
-                the Model-View-Controller (MVC) design pattern for scalable
-                multiplayer functionality supporting up to four players.
+                A C# MCP server and NuGet package that automates
+                MongoDB-to-SQL migrations. It discovers collections, infers
+                relationships and generates relational schemas.
               </li>
               <li>
-                Implemented concurrency management, ensuring smooth,
-                simultaneous gameplay by leveraging Java multithreading.
+                A relationship inference engine analyzes dynamic JSON documents
+                to find cross-collection relationships and normalize the data
+                model.
               </li>
               <li>
-                Created comprehensive unit tests using JUnit to validate game
-                logic, server communication, and edge cases, ensuring high code
-                reliability and maintainability
+                A deterministic generation pipeline outputs migration-ready DDL,
+                seed data, foreign keys and ER diagrams in Mermaid, PlantUML
+                and GraphViz.
+              </li>
+              <li>
+                Exposed through the Model Context Protocol, so GitHub Copilot,
+                VS Code and Claude Desktop can run schema discovery and
+                generation directly.
               </li>
             </ul>
-
             <div class="project-tech">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">MVC</span>
-              <span class="tech-tag">Socket Programming</span>
-              <span class="tech-tag">Unit Testing</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">.NET Core</span>
+              <span class="tech-tag">MCP</span>
+              <span class="tech-tag">NuGet</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">AI Developer Tooling</span>
             </div>
           </div>
-          <!-- Mcp -->
+          <!-- MCP Weather -->
           <div class="card">
             <h3 style="color: var(--primary-color); margin-bottom: 1rem">
               MCP Server Weather Insights
             </h3>
             <ul class="experience-achievements">
               <li>
-                Designed and published a custom MCP (Model Context Protocol)
-                server as a reusable NuGet package, enabling AI-assisted
-                developer tools to access real-time data and custom
-                functionality.
+                A custom MCP server, published as a reusable NuGet package, that
+                gives AI coding assistants real-time weather data from inside
+                the editor.
               </li>
               <li>
-                Developed RESTful APIs for weather forecasts and multi-city
-                visualization, exposing structured tools that AI copilots can
-                call directly inside the coding environment.
-              </li>
-              <li>
-                Implemented a modular server architecture with clean, extensible
-                tool definitions and strong integration patterns for AI-assisted
-                workflows.
-              </li>
-              <li>
-                Demonstrated real-time data integration and context-aware AI
-                augmentation, reducing friction in development workflows.
+                Exposes REST-backed tools for forecasts and multi-city
+                comparisons, with a modular design that makes new tools easy to
+                add.
               </li>
             </ul>
-
             <div class="project-tech">
               <span class="tech-tag">C#</span>
               <span class="tech-tag">MCP</span>
               <span class="tech-tag">NuGet</span>
               <span class="tech-tag">REST API</span>
-              <span class="tech-tag">AI Developer Tools</span>
-            </div>
-          </div>
-          <!-- Concurrent Http Server -->
-          <div class="card">
-            <h3 style="color: var(--primary-color); margin-bottom: 1rem">
-              Concurrent HTTP Server
-            </h3>
-            <ul class="experience-achievements">
-              <li>
-                A concurrent HTTP server in C that allow, using Thread per
-                connection and Thread pool models to handle multiple client
-                requests efficiently and boost server performance.
-              </li>
-              <li>
-                Implemented a robust request parser to handle various HTTP
-                methods like GET, POST, PUT, DELETE and serve static files with
-                proper MIME types.
-              </li>
-            </ul>
-
-            <div class="project-tech">
-              <span class="tech-tag">C</span>
-              <span class="tech-tag">Concurrent Programming</span>
-            </div>
-          </div>
-          <!-- MovieLens -->
-          <div class="card">
-            <h3 style="color: var(--primary-color); margin-bottom: 1rem">
-              MovieLens
-            </h3>
-            <ul class="experience-achievements">
-              <li>
-                Leveraged ORM models to dynamically query and manipulate
-                MovieLens database based on user input.
-              </li>
-              <li>
-                Implemented a Python application to read, update, and maintain
-                data integrity within a SQLite database.
-              </li>
-              <li>
-                Constructed and executed optimized SQL queries for efficient
-                data retrieval and manipulation.
-              </li>
-              <li>
-                Developed a structured data layer to map database records into
-                Python objects, enabling seamless interaction between the
-                database and application logic.
-              </li>
-            </ul>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">SQL</span>
-              <span class="tech-tag">ORM</span>
-              <span class="tech-tag">SQLite</span>
             </div>
           </div>
           <!-- Stay Safe -->
@@ -458,72 +385,226 @@
             </h3>
             <ul class="experience-achievements">
               <li>
-                Built a real-time incident reporting mobile web app using
-                JavaScript and Google APIs, allowing users to quickly submit
-                reports and view alerts based on location.
+                A real-time incident reporting web app. Users submit reports
+                and see alerts based on their location.
               </li>
               <li>
-                Designed a responsive, intuitive UI that works smoothly across
-                devices and improves accessibility for a broad user base.
+                Built with a responsive, accessible UI, asynchronous JavaScript
+                and geolocation APIs for fast location-based lookups.
               </li>
               <li>
-                Implemented robust client-side logic using asynchronous
-                JavaScript, geolocation APIs, and optimized data-fetching
-                patterns to enable fast, location-based report retrieval.
-              </li>
-              <li>
-                Leveraged Google Cloud Console for backend services, data
-                handling, and deployment pipelines.
+                Backend services, data handling and deployment run on Google
+                Cloud.
               </li>
             </ul>
-
             <div class="project-tech">
-              <span class="tech-tag">GCP</span>
               <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">Google APIs</span>
+              <span class="tech-tag">GCP</span>
+              <span class="tech-tag">HTML/CSS</span>
             </div>
           </div>
-           <!-- Traffic Crashes Analysis -->
+          <!-- Concurrent Http Server -->
+          <div class="card">
+            <h3 style="color: var(--primary-color); margin-bottom: 1rem">
+              Concurrent HTTP Server
+            </h3>
+            <ul class="experience-achievements">
+              <li>
+                An HTTP server in C that handles many clients at once, using
+                both thread-per-connection and thread-pool models.
+              </li>
+              <li>
+                Includes a request parser for GET, POST, PUT and DELETE, and
+                serves static files with the correct MIME types.
+              </li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-tag">C</span>
+              <span class="tech-tag">Concurrency</span>
+              <span class="tech-tag">Networking</span>
+            </div>
+          </div>
+          <!-- Networked 3 Card Poker -->
+          <div class="card">
+            <h3 style="color: var(--primary-color); margin-bottom: 1rem">
+              Networked 3 Card Poker
+            </h3>
+            <ul class="experience-achievements">
+              <li>
+                A multithreaded, networked poker game in Java for up to four
+                players, built on the MVC pattern.
+              </li>
+              <li>
+                Manages concurrency so games run smoothly while players act at
+                the same time.
+              </li>
+              <li>
+                JUnit tests cover game logic, server communication and edge
+                cases.
+              </li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">MVC</span>
+              <span class="tech-tag">Sockets</span>
+              <span class="tech-tag">JUnit</span>
+            </div>
+          </div>
+          <!-- Traffic Crashes Analysis -->
           <div class="card">
             <h3 style="color: var(--primary-color); margin-bottom: 1rem">
               Traffic Crashes Analysis
             </h3>
             <ul class="experience-achievements">
               <li>
-                Developed a comprehensive traffic incident analysis system using
-                JavaScript, HTML, and Python (Pandas), leveraging Vega-Lite for
-                creating interactive and informative visualizations such as bar
-                charts, line charts, scatter plots, and heat maps.
+                An interactive analysis of traffic incidents, with the data
+                prepared in Python (Pandas) and charted in Vega-Lite.
               </li>
               <li>
-                Implemented linked visualizations that allow users to explore
-                and analyze different aspects of traffic incidents, including
-                injury distribution, safety equipment usage, age-based
-                comparisons, and weather conditions.
-              </li>
-              <li>
-                Demonstrated proficiency in data manipulation, aggregation, and
-                visualization techniques, with a specific emphasis on utilizing
-                Vega-Lite for declarative and expressive chart specifications.
+                Linked views let users explore injuries, safety equipment use,
+                age groups and weather conditions together.
               </li>
             </ul>
-
             <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Vega-Lite</span>
               <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Python </span>
-              <span class="tech-tag">Pandas </span>
-              <span class="tech-tag">Jupyter Notebook </span>
+            </div>
+          </div>
+          <!-- MovieLens -->
+          <div class="card">
+            <h3 style="color: var(--primary-color); margin-bottom: 1rem">
+              MovieLens
+            </h3>
+            <ul class="experience-achievements">
+              <li>
+                A Python application that queries and updates the MovieLens
+                dataset in SQLite through an ORM data layer.
+              </li>
+              <li>
+                Uses optimized SQL queries and keeps data integrity intact on
+                every update.
+              </li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">ORM</span>
+              <span class="tech-tag">SQLite</span>
             </div>
           </div>
         </div>
       </div>
     </section>
     <hr />
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2><span class="section-icon">🛠️</span> Skills & Certifications</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3>🧭 Product Engineering</h3>
+            <ul>
+              <li>0→1 development</li>
+              <li>Stakeholder discovery</li>
+              <li>Problem framing & requirements</li>
+              <li>Metrics-driven iteration</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>⚛️ Frontend</h3>
+            <ul>
+              <li>React, Redux</li>
+              <li>TypeScript, JavaScript</li>
+              <li>Responsive UI design</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>🧩 Backend & APIs</h3>
+            <ul>
+              <li>C#, .NET Core, ASP.NET Core</li>
+              <li>Node.js, Express</li>
+              <li>REST API design & integration</li>
+              <li>Stripe webhooks, Firebase Functions</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>🗄️ Data</h3>
+            <ul>
+              <li>SQL Server, T-SQL</li>
+              <li>MySQL</li>
+              <li>Firebase / Firestore, NoSQL</li>
+              <li>Query optimization</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>🤖 AI & LLM</h3>
+            <ul>
+              <li>Model Context Protocol (MCP)</li>
+              <li>Tool / agent orchestration</li>
+              <li>Prompt design</li>
+              <li>AI-assisted development</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>🏢 Enterprise & Identity</h3>
+            <ul>
+              <li>Azure, Azure DevOps</li>
+              <li>Dynamics / Dataverse, M365</li>
+              <li>AD, Entra ID, Okta, CAC</li>
+              <li>SSO, RBAC</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>🚀 Engineering & DevOps</h3>
+            <ul>
+              <li>Git, GitLab CI/CD</li>
+              <li>SAST, dependency scanning</li>
+              <li>IIS deployments</li>
+              <li>Secure SDLC, code review</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>💻 Languages</h3>
+            <ul>
+              <li>C#, TypeScript, JavaScript</li>
+              <li>Python, SQL</li>
+              <li>Java, C, C++</li>
+              <li>Dart</li>
+            </ul>
+          </div>
+
+          <div class="skill-item">
+            <h3>🎓 Certifications</h3>
+            <ul>
+              <li>CompTIA Security+</li>
+              <li>Agile Foundations</li>
+              <li>The Complete 2024 Web Development Bootcamp</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+
     <!-- Contact Section -->
     <section class="section" id="contact">
       <div class="container">
         <h2><span class="section-icon">📧</span> Contact</h2>
+        <p class="contact-lead">
+          Have a problem that needs someone to sit with users, figure out what
+          is really going on, and ship the fix? Let's talk.
+        </p>
 
         <div class="contact-grid">
           <div class="contact-item">
@@ -553,7 +634,6 @@
     <button class="scroll-top" onclick="scrollToTop()">↑</button>
 
     <script>
-      // Theme toggle functionality
       function scrollToTop() {
         window.scrollTo({
           top: 0,
@@ -564,13 +644,6 @@
       // document.addEventListener("DOMContentLoaded", function () {
       //   console.log("DOM fully loaded and parsed");
       // });
-      const myModalEl = document.getElementById("staticBackdrop");
-      myModalEl.addEventListener("hidden.bs.modal", (event) => {
-        const audio = document.getElementById("myAudio");
-        audio.pause();
-        audio.currentTime = 0;
-      });
-
       // Show/hide scroll to top button
       window.addEventListener("scroll", function () {
         const scrollTop = document.querySelector(".scroll-top");
