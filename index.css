@@ -710,36 +710,119 @@ body {
     justify-content: center;
   }
 
- .nav {
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: #222; /* dark background for contrast */
-  width: 200px;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-}
+  /* Menu button: quiet icon that turns into an orange ✕ while the menu is open */
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: var(--text-light);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
 
-.nav-links.active {
-  display: flex;
-}
+  .hamburger:hover,
+  .hamburger[aria-expanded="true"] {
+    background: rgba(242, 124, 34, 0.1);
+    border-color: rgba(242, 124, 34, 0.5);
+    color: var(--primary-color);
+  }
 
-.hamburger {
-  display: block;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color:black;
-  background-color: var(--primary-color);
-}
+  .hamburger-bars {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 14px;
+  }
 
+  .hamburger-bars span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+  }
+
+  .hamburger-bars span:nth-child(1) { top: 0; }
+  .hamburger-bars span:nth-child(2) { top: 6px; }
+  .hamburger-bars span:nth-child(3) { top: 12px; }
+
+  .hamburger[aria-expanded="true"] .hamburger-bars span:nth-child(1) {
+    top: 6px;
+    transform: rotate(45deg);
+  }
+  .hamburger[aria-expanded="true"] .hamburger-bars span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger[aria-expanded="true"] .hamburger-bars span:nth-child(3) {
+    top: 6px;
+    transform: rotate(-45deg);
+  }
+
+  /* Full-width menu that drops down under the header. Hidden with visibility (not display)
+     so it can fade in; hidden links stay out of the Tab order either way. */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.5rem 0 1rem;
+    background: rgba(18, 18, 18, 0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+  }
+
+  .nav-links.active {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s;
+  }
+
+  .nav-links li + li {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-links .nav-link {
+    display: block;
+    padding: 0.95rem 20px;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-links .nav-link:hover,
+  .nav-links .nav-link:focus-visible {
+    color: var(--primary-color);
+    background: rgba(242, 124, 34, 0.06);
+    transform: none;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
 }
 
 /* Animation delays for staggered effects */
