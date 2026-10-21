@@ -210,12 +210,19 @@ body {
   }
 
   .hero-content {
-    /* max-width: 50%; */
-    transform: translateX(-7rem); 
+    /* Shift the text column left for balance. Below 1280px there's only ~65px of room (the chips re-wrap),
+       so use a smaller shift there; otherwise chips and buttons run off the left edge on smaller laptops. */
+    transform: translateX(-3rem);
   }
   .hero-image-container {
     position: relative;         
     top: -30px;                 
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-content {
+    transform: translateX(-7rem);
   }
 }
 
@@ -665,10 +672,10 @@ body {
   .hero-inner {
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    /* Extra top padding clears the fixed header. (It used to be a relative top: 80px nudge,
+       which moved the content without growing the hero, so overflow: hidden cut off the photo.) */
+    padding: calc(2rem + 80px) 1rem 2rem;
     text-align: center;
-    position: relative;
-    top:80px
   }
   .hero h1 {
     font-size: 2.2rem;
