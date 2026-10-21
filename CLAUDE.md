@@ -17,15 +17,18 @@ Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.we
 - Plain, specific wording. No buzzword stacking.
 
 ## Facts (source of truth)
+- LinkedIn is the reference for titles and dates; the site must match it. `assets/Preet_Talati_Resume.pdf` still uses
+  the old "Developer" titles (as of Oct 2026) until Preet sends an updated PDF.
 - **Use only facts from Preet's resume or this file. Never invent metrics.** Approved numbers: ~25% SQL query performance,
   40% app performance (metrics instrumentation at Gyfr), 10,000+ users, 50+ API routes, 100+ students (TA).
   Do not use the old claims: 30% IIS load times, 40% user retention, 40% deployment efficiency.
 - **DLIFLC** (Defense Language Institute Foreign Language Center). Preet is a contractor there through **NexTech**, shown as
   a small note under the DLIFLC heading, not as the employer heading.
-  - Senior Software Developer, Aug 2026 – Present. Title only: no "Project Lead", no "Promoted".
-  - Software Developer, Aug 2024 – Aug 2026.
-- **Gyfr** (fitness platform, web + mobile): CTO Feb 2025 – Aug 2026 (ended); Lead Software Developer Jun 2024 – Feb 2025.
-- **UIC**: B.S. Computer Science, Summa Cum Laude, GPA 3.92/4.0; Teaching Assistant Jun 2023 – May 2024.
+  - Senior Software Engineer, Oct 2026 – Present. Title only: no "Project Lead", no "Promoted".
+  - Software Engineer, Aug 2024 – Sep 2026.
+  - Titles say "Engineer", not "Developer" (matches LinkedIn as of Oct 2026).
+- **Gyfr** (fitness platform, web + mobile): CTO Feb 2025 – Aug 2026 (ended); Founding Engineer Jun 2024 – Feb 2025.
+- **UIC**: B.S. Computer Science, Summa Cum Laude, GPA 3.92/4.0; Teaching Assistant Jan 2023 – May 2024.
 - Certifications: CompTIA Security+, Agile Foundations, The Complete 2024 Web Development Bootcamp.
 - Database at DLIFLC is SQL Server (not MySQL).
 - Public repos linked from project cards: No2SQL → `Ptalati015/No2SQL` (+ NuGet `No2SQL`), MD2PDF → `Ptalati015/MD2PDF`
