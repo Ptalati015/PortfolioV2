@@ -49,8 +49,11 @@ Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.we
 - Multi-role employers use one `.experience-item` with a `.experience-company` heading and a `.experience-subrole` per role.
 - Section order: Hero → About → How I Work → Experience → Projects → Skills → Contact.
 - The hero has no tagline paragraph (removed on purpose). It has name, skill chips and two buttons.
-- `.hero-content` is shifted left by `translateX(-7rem)` on wide screens. Anything wide added to the hero needs a
-  `max-width`, or it clips on the left edge.
+- `.hero-content` is shifted left for balance: `translateX(-3rem)` from 1024–1279px (only ~65px of room there because
+  the chips re-wrap) and `translateX(-7rem)` from 1280px up. Anything wide added to the hero needs a `max-width`, or it
+  clips on the left edge.
+- On phones (≤768px) the hero clears the fixed header with top padding on `.hero-inner`. Don't use a relative `top`
+  offset: `.hero` has `overflow: hidden`, so a visual nudge cuts off the bottom of the photo.
 
 ## Workflow
 - Work on a new branch off the latest `main`, never directly on `main`.
