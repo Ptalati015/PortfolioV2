@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stumps Ahead Case Study - Preet Talati</title>
+    <meta
+      name="description"
+      content="How Preet Talati built Stumps Ahead, a mobile cricket game, by orchestrating a team of Claude Code agents in defined roles: 16 releases, 65 merged pull requests and 175 tests."
+    />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="header">
+      <nav class="nav container">
+        <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
+        <div class="logo case-logo">PT</div>
+        <a
+          class="theme-toggle"
+          href="https://stumpsahead.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          >Play it live</a
+        >
+      </nav>
+    </header>
+
+    <main id="main" class="container case-main" tabindex="-1">
+      <section class="case-hero">
+        <h1>Stumps Ahead</h1>
+        <p class="case-tagline">
+          A T20-style cricket game for your phone's browser. Pick a nation and
+          your XI, then bat and bowl a full match against the computer. I built
+          it by running a team of Claude Code agents the way I'd run an
+          engineering team: a spec, clear owners, review gates and releases.
+        </p>
+        <div class="project-tech" style="margin-top: 1.5rem">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">SVG</span>
+          <span class="tech-tag">Node test runner</span>
+          <span class="tech-tag">Playwright</span>
+          <span class="tech-tag">esbuild</span>
+          <span class="tech-tag">Vercel</span>
+          <span class="tech-tag">Claude Code</span>
+        </div>
+        <div class="project-links">
+          <a
+            class="project-link"
+            href="https://stumpsahead.vercel.app/"
+            target="_blank"
+            rel="noopener"
+            >Live demo</a
+          >
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>The goal</h2>
+        <p>
+          A quick cricket match on a phone: inspired by the big cricket video
+          games, but much simpler. One player against the computer, touch
+          controls, and nothing to install or sign up for. The first spec set a
+          hard deadline (a playable build by 9am the next morning) and said to
+          cut scope rather than slip.
+        </p>
+        <p>
+          It was built by a team of AI agents directed like an engineering team:
+          each with an owner's role, contracts between their work, and a human
+          deciding what ships.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>How it was built: the agent team</h2>
+        <p>
+          Each agent had one job and owned specific files. I set priorities,
+          picked what went into each release, added requirements along the way,
+          and approved every merge to <code>main</code>.
+        </p>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3>Karen · Product</h3>
+            <p>
+              Writes the spec and roadmap, and defines what "done" means for each
+              release.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Ayush · Match engine</h3>
+            <p>
+              Owns the rules, ball outcomes, computer opponent and the play
+              screen.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Joel · Teams and UI</h3>
+            <p>
+              Owns nations, the name generator, venues, menus, scoreboard and
+              result screens.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Dan · Design and animation</h3>
+            <p>
+              Produces mock-ups to choose from and polishes the match animation.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Mark · Security</h3>
+            <p>
+              Reviews every release for security and copyright: safe rendering,
+              no third-party scripts, no real player names or logos.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Violet · QA</h3>
+            <p>
+              Tests each release against its "done when" list and files the notes
+              that become the next fixes.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Researcher · What next</h3>
+            <p>
+              Keeps a backlog of ideas, each sized by effort, for me to pick
+              from.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Julie · Docs and releases</h3>
+            <p>Keeps the docs current, triages bugs and runs release checks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>How the orchestration works</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3>The spec is the contract</h3>
+            <p>
+              The spec defines the data shapes and functions between the engine
+              and the UI, and who owns which file. That let two developer agents
+              build in parallel on separate branches without stepping on each
+              other. Changing the contract takes a spec pull request.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>"Done when" before anything ships</h3>
+            <p>
+              Release specs list the checks QA and security must pass. A
+              standing list of release blockers covers the classic bugs in
+              quickly built games: score maths, timers that double-fire,
+              double taps and leftover state.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>A human decides what ships</h3>
+            <p>
+              Nothing reaches <code>main</code> without my approval. I pick each
+              release from the researcher's backlog, and when several pull
+              requests depend on each other, the merge order is planned up front.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Cut scope, don't slip</h3>
+            <p>
+              The first spec carried an ordered cut list (difficulty levels,
+              animation, the 10-over option) so the deadline held even if
+              something turned out harder than expected.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>A testable engine</h3>
+            <p>
+              All randomness goes through one seeded generator, and the match
+              engine never touches the page. That makes every rule testable in
+              Node with repeatable results.
+            </p>
+          </div>
+          <div class="skill-item">
+            <h3>Secure and original by default</h3>
+            <p>
+              A strict Content Security Policy, no third-party scripts and safe
+              text rendering. Player names are made up every session and checked
+              against a list of real cricketers, and real grounds appear by
+              their plain names only.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Architecture</h2>
+        <p>
+          Plain HTML, CSS and JavaScript modules: no framework and no runtime
+          dependencies. There's no backend or account, and nothing is stored.
+          Vercel serves a minified build with security headers.
+        </p>
+        <div class="flow" aria-label="Architecture diagram">
+          <div class="flow-box">
+            <strong>Controls</strong><span>shot buttons · direction pad · landing ring</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Match engine</strong><span>rules · outcomes · AI · seeded RNG</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Commentary</strong><span>ball-by-ball lines · milestones</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Scene</strong><span>SVG stadium · live scoreboard</span>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <strong>Delivery</strong><span>tests · QA scripts · Vercel</span>
+          </div>
+        </div>
+        <ul class="experience-achievements">
+          <li>
+            Seven nations, each with two real home grounds, and squads of 15 to
+            pick your XI from.
+          </li>
+          <li>
+            Batting with shot buttons and a direction pad; bowling by dragging
+            where the ball lands, with swing, slower balls and spin.
+          </li>
+          <li>
+            2, 5, 10 or 20 overs, three difficulty levels, a super over on a tie,
+            and Quick play to auto-play overs from the pause menu.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Results</h2>
+        <div class="stats">
+          <div class="stat"><strong>2 days</strong><span>first commit to v1.0</span></div>
+          <div class="stat"><strong>16</strong><span>releases in 3 days</span></div>
+          <div class="stat"><strong>65</strong><span>merged pull requests</span></div>
+          <div class="stat"><strong>175</strong><span>automated tests</span></div>
+          <div class="stat"><strong>14</strong><span>real grounds, 7 nations</span></div>
+        </div>
+        <p>
+          Live on Vercel. The game shows its version number, and every release
+          is logged in a changelog.
+        </p>
+        <p>
+          <a class="cta-button" href="../index.html#contact">Talk to me about it</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
