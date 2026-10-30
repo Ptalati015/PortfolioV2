@@ -2,7 +2,7 @@
 
 Personal portfolio for Preet Talati. Static site: `index.html` + `index.css`, no framework and no build step. (Bootstrap was removed in Sep 2026. The few
 styles it provided are copied at the top of `index.css` under `:where(.home)`; the home page's `<body>` has class `home`.)
-Case study pages live in `projects/` (currently `no2sql.html` and `md2pdf.html`). They link `../index.css` and add `.case-*` classes.
+Case study pages live in `projects/` (currently `no2sql.html`, `stumpsahead.html` and `md2pdf.html`). They link `../index.css` and add `.case-*` classes.
 Feature specs live in `specs/` while in progress. Delete a spec once its PR is merged (git keeps the history); the folder
 stays with a `.gitkeep`.
 Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.webp`/`image-960.webp`/`image-960.jpg` via
@@ -35,6 +35,12 @@ Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.we
   (+ live demo https://md2pdf-io.vercel.app/), Weather MCP → `MCP_DEMO`,
   STAY SAFE → `stay-safe`, Traffic Crashes → `viz-data-chicago-traffic-people`. Poker, HTTP Server and MovieLens have no
   public repo, so they get no links.
+- **Stumps Ahead** (`Ptalati015/Stumps_Ahead`) is a **private** repo, so its card has no GitHub link: only the case study
+  and the live demo https://stumpsahead.vercel.app/. Facts come from its README, SPEC.md, CHANGELOG.md and tests (checked
+  2026-10-30): first commit 2026-10-22, v1.0.0 on 2026-10-24, 16 releases through v1.4.8.2 by 2026-10-26, 65 merged PRs,
+  175 tests. Built by a team of Claude Code agents in named roles (Karen PM, Ayush engine, Joel teams/UI, Dan design and
+  animation, Mark security, Violet QA, Researcher, Julie docs); Preet picks releases and approves every merge. Re-check
+  the numbers in the repo before updating them; they grow with each release.
 - MD2PDF facts come from its source code (the repo README is still the Vite template). Its PDF export is image-based
   (html2canvas + jsPDF), so don't claim selectable or searchable PDF text.
 - No2SQL facts come from its repo README and `docs/No2SQL_Specification.docx`. Its NuGet download count (1.1K+ as of
