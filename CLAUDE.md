@@ -17,10 +17,13 @@ Assets live in `assets/` (`image.jpg` original headshot, served as `image-480.we
 - Plain, specific wording. No buzzword stacking.
 
 ## Facts (source of truth)
-- LinkedIn is the reference for titles and dates; the site must match it. `assets/Preet_Talati_Resume.pdf` still uses
-  the old "Developer" titles (as of Oct 2026) until Preet sends an updated PDF.
-- **Use only facts from Preet's resume or this file. Never invent metrics.** Approved numbers: ~25% SQL query performance,
-  40% app performance (metrics instrumentation at Gyfr), 10,000+ users, 50+ API routes, 100+ students (TA).
+- LinkedIn is the reference for titles and dates; the site must match it. `assets/Preet_Talati_Resume.pdf` was updated
+  on 2026-11-03 (Engineer titles). Known issue: that PDF shows Senior Software Engineer from **Aug 2026**, while LinkedIn
+  and the site say **Oct 2026**; Preet will send a corrected PDF. Keep the site on Oct 2026.
+- **Use only facts from Preet's resume or this file. Never invent metrics.** Approved numbers: ~25% SQL query performance
+  (Software Engineer), 60% query performance (Senior Software Engineer, database design and optimization), 45+ RBAC roles
+  (DLIFLC identity work), 40% app performance (metrics instrumentation at Gyfr), 10,000+ users, 50+ API routes,
+  100+ students (TA).
   Do not use the old claims: 30% IIS load times, 40% user retention, 40% deployment efficiency.
 - **DLIFLC** (Defense Language Institute Foreign Language Center). Preet is a contractor there through **NexTech**, shown as
   a small note under the DLIFLC heading, not as the employer heading.
